@@ -3,24 +3,12 @@ import style from "./SearchBar.module.css";
 
 export default function SearchBar ({ onSearch }) {
   const [character, setCharacter] = useState("");
+  console.log(character);
 
   const handleChange = (e) => {
     setCharacter(e.target.value);
-  
-
-    if(!character.includes(e.target.name)) {
-      setCharacter({
-          ...character,
-          character: [...character, e.target.name],
-      })
-    }
-    else {
-      setCharacter({
-          ...character,
-          character: character.filter(e => e !== e.target.name)
-      })
-    }
   }
+  
 
   return (
     <>
